@@ -1,8 +1,16 @@
+import { Navigate, Outlet, useLocation } from 'react-router-dom'
+
 function App() {
+  const { pathname } = useLocation()
+
+  if (pathname === '/') {
+    return <Navigate to="/" />
+  }
+
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">TypeSprit React Template</h1>
-    </>
+    <main>
+      <Outlet />
+    </main>
   )
 }
 
