@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <h1>TypeScript React Template</h1>
+      <h1 className="text-3xl font-bold underline">TypeSprit React Template</h1>
     </>
   )
 }
