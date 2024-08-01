@@ -1,9 +1,11 @@
+import { HomePage } from '@/pages'
+
 export const publicRoutes = [
   {
     path: '/',
     element: (
-      <div className="max-w-[1440px] h-100">
-        <h1 className="font-bold text-2xl">Login</h1>
+      <div className="max-w-[1440px] h-100 mx-auto">
+        <HomePage />
       </div>
     ),
   },

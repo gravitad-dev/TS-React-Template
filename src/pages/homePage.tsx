@@ -1,7 +1,9 @@
+import Navbar from '@/components/Navbar/Navbar'
+
 export const HomePage = () => {
   return (
     <>
-      <h1 className="text-3xl font-bold underline">TS React Template</h1>
+      <Navbar />
     </>
   )
 }
