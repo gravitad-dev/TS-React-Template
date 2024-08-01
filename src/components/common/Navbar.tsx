@@ -1,4 +1,6 @@
-const NavLinks = [
+import type { NavLink } from '@/interfaces';
+
+const NavLinks: NavLink[] = [
   {
     name: 'Inicio',
     href: '#',

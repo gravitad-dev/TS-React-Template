@@ -1,11 +1,9 @@
-import Navbar from '@/components/Navbar/Navbar'
-
 export const HomePage = () => {
   return (
-    <>
-      <Navbar />
-    </>
-  )
-}
+    <section className='min-h-screen'>
+      <h1>Home</h1>
+    </section>
+  );
+};
 
-export default HomePage
+export default HomePage;
