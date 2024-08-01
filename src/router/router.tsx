@@ -1,3 +1,4 @@
+import { Footer } from '@/components/common/'
 import type { Routes } from '@/types'
 import type { RouteObject } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom'
@@ -36,7 +37,7 @@ export const AppRouter = () => {
   }
 
   const publicRouteObjects = generateRouteConfig(publicRoutes)
-  const privateRouteObjects = generateRouteConfig(privateRoutes, false)
+  const privateRouteObjects = generateRouteConfig(privateRoutes, true)
   const fallbackRouteObjects = generateRouteConfig(fallbackRoutes)
 
   const routes = [
@@ -47,5 +48,10 @@ export const AppRouter = () => {
 
   const allRoutes = useRoutes(routes)
 
-  return <> {allRoutes} </>
+  return (
+    <>
+      {allRoutes}
+      <Footer />
+    </>
+  )
 }
