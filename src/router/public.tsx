@@ -3,7 +3,7 @@ export const publicRoutes = [
     path: '/',
     element: (
       <div className="max-w-[1440px] h-100">
-        <h1 className="font-bold text-2xl">Login</h1>
+        <h1 className="font-bold text-2xl">Home</h1>
       </div>
     ),
   },
