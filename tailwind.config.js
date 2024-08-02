@@ -8,6 +8,11 @@ export default {
         inter: ['Inter', 'sans-serif'],
         ptSans: ['PT Sans', 'sans-serif'],
       },
+      colors: {
+        primary: '#6828B0',
+        // secondary: '#28B068',
+        // customBlue: '#2868B0',
+      },
       invert: {
         25: '.25',
         50: '.5',
@@ -15,5 +20,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 };
