@@ -1,16 +1,23 @@
-export interface TextItem {
-  id: number
-  type: 'text'
-  content: string
-  href?: string
+// interfaces.ts
+export interface FooterData {
+  sections: Section[]
+  copyRight: FooterCopyRight[]
 }
 
-export interface LinkItem {
+export interface Section {
   id: number
-  icon?: string
-  type: 'link'
-  href: string
+  title: string
+  image?: ImageItem
+  image2?: ImageItem
+  content?: TextItem
+  link?: LinkItem
+}
+
+export interface FooterCopyRight {
+  id: number
   content: string
+  href?: string
+  type?: 'text' | 'link'
 }
 
 export interface ImageItem {
@@ -18,19 +25,18 @@ export interface ImageItem {
   type: 'image'
   src: string
   alt: string
-  content?: string
-  href?: string
 }
 
-export type FooterItem = TextItem | LinkItem | ImageItem
-
-export interface FooterSection {
+export interface TextItem {
   id: number
-  title: string
-  items: FooterItem[]
+  type: 'text'
+  content: string
 }
 
-export interface FooterData {
-  sections: FooterSection[]
-  copyRight: TextItem[]
+export interface LinkItem {
+  id: number
+  type: 'link'
+  href: string
+  content: string
+  icon?: string
 }

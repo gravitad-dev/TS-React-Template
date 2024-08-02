@@ -6,7 +6,7 @@ interface LayoutProps {
 }
 
 export const Layout: React.FC<LayoutProps> = ({
-  maxWidth = 'max-w-[1720px]',
+  maxWidth = 'max-w-[1535px]',
   children,
 }) => {
   return <div className={`${maxWidth} mx-auto p-4`}>{children}</div>

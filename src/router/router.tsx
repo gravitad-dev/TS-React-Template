@@ -1,4 +1,4 @@
-import { Footer, Layout, Navbar } from '@/components/common/'
+import { Footer, Navbar } from '@/components/common/'
 import type { Routes } from '@/types'
 import type { RouteObject } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom'
@@ -51,7 +51,7 @@ export const AppRouter = () => {
   return (
     <>
       <Navbar />
-      <Layout>{allRoutes}</Layout>
+      {allRoutes}
       <Footer />
     </>
   )
