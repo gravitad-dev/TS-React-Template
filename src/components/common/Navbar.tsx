@@ -45,7 +45,7 @@ const NavLinks: NavLink[] = [
 const contactHref = 'example-blog.com'
 const textSize = '20 px'
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <header className="w-full bg-black px-[32px] ">
       <nav className="navbar z-10  text-white  max-w-[1535px] mx-auto h-[80px] ">
