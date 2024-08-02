@@ -7,9 +7,9 @@ import {
   phone,
   x,
   youtube,
-} from '@/assets/index';
-import type { FooterData } from '@/interfaces';
-import type React from 'react';
+} from '@/assets/index'
+import type { FooterData } from '@/interfaces'
+import type React from 'react'
 
 // Datos del footer
 const data: FooterData = {
@@ -53,7 +53,7 @@ const data: FooterData = {
     { id: 3, content: 'Política de cookies', href: '/cookies' },
     { id: 4, content: 'Aviso legal', href: '/legal' },
   ],
-};
+}
 
 // Enlaces sociales
 const socialLinks = [
@@ -62,7 +62,7 @@ const socialLinks = [
   { href: 'https://linkedin.com', src: linkedin, alt: 'LinkedIn' },
   { href: 'https://instagram.com', src: instagram, alt: 'Instagram' },
   { href: 'https://youtube.com', src: youtube, alt: 'YouTube' },
-];
+]
 
 const renderSocialLinks = () => (
   <div className="flex gap-6 mt-6 md:mt-[32px] items-center flex-wrap">
@@ -76,7 +76,7 @@ const renderSocialLinks = () => (
       </a>
     ))}
   </div>
-);
+)
 
 export const Footer: React.FC = () => (
   <footer className="bg-[#E6E6E6] pb-6 pt-[64px] font-ptSans w-full text-[#707070] md:text-black">
@@ -171,4 +171,4 @@ export const Footer: React.FC = () => (
       </div>
     </div>
   </footer>
-);
+)
