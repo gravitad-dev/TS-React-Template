@@ -130,7 +130,7 @@ export const Footer: React.FC = () => (
       </div>
 
       {/* Sección 3: Blog / Newsletter */}
-      <div className="col-span-1 md:px-4 md:ml-4 space-y-4 md:space-y-[32px] w-[90%]">
+      <div className="col-span-1 mt-4 sm:mt-0 md:px-4 md:ml-4 space-y-4 md:space-y-[32px] w-[90%]">
         <h4 className="text-[16px] md:text-[24px]">{data.sections[2].title}</h4>
         {data.sections[2].content && (
           <p className="text-[14px] md:text-[20px]">
