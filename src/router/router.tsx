@@ -1,12 +1,12 @@
-import { Footer } from '@/components/common/';
-import type { Routes } from '@/types';
-import type { RouteObject } from 'react-router-dom';
-import { useRoutes } from 'react-router-dom';
-import { fallbackRoutes } from './fallback';
-import { ProtectedRoute } from './guard/ProtectedRoute';
-import { privateRoutes } from './private';
-import { publicRoutes } from './public';
-import Navbar from '@/components/common/Navbar';
+import { Footer } from '@/components/common/'
+import Navbar from '@/components/common/Navbar'
+import type { Routes } from '@/types'
+import type { RouteObject } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
+import { fallbackRoutes } from './fallback'
+import { ProtectedRoute } from './guard/ProtectedRoute'
+import { privateRoutes } from './private'
+import { publicRoutes } from './public'
 
 export const AppRouter = () => {
   /** 
@@ -26,28 +26,28 @@ export const AppRouter = () => {
         ) : (
           route.element
         ),
-      };
+      }
 
       // Recursively handle & generate children routes
       if (route.children) {
-        routeObject.children = generateRouteConfig(route.children);
+        routeObject.children = generateRouteConfig(route.children)
       }
 
-      return routeObject;
-    });
-  };
+      return routeObject
+    })
+  }
 
-  const publicRouteObjects = generateRouteConfig(publicRoutes);
-  const privateRouteObjects = generateRouteConfig(privateRoutes, true);
-  const fallbackRouteObjects = generateRouteConfig(fallbackRoutes);
+  const publicRouteObjects = generateRouteConfig(publicRoutes)
+  const privateRouteObjects = generateRouteConfig(privateRoutes, true)
+  const fallbackRouteObjects = generateRouteConfig(fallbackRoutes)
 
   const routes = [
     ...publicRouteObjects,
     ...privateRouteObjects,
     ...fallbackRouteObjects,
-  ];
+  ]
 
-  const allRoutes = useRoutes(routes);
+  const allRoutes = useRoutes(routes)
 
   return (
     <>
@@ -55,5 +55,5 @@ export const AppRouter = () => {
       {allRoutes}
       <Footer />
     </>
-  );
-};
+  )
+}
