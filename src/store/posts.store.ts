@@ -1,7 +1,7 @@
+import { fetchPosts } from '@/services'
 import type { StateCreator } from 'zustand'
 import { create } from 'zustand'
 import { devtools } from 'zustand/middleware'
-import { fetchPosts } from '@/services'
 
 interface Post {
   userId: number

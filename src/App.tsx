@@ -1,15 +1,15 @@
-import { Navigate, Outlet, useLocation } from 'react-router-dom'
+import { Suspense } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { AppRouter } from './router/router'
 
 function App() {
-  const { pathname } = useLocation()
-
-  if (pathname === '/') {
-    return <Navigate to="/" />
-  }
-
   return (
     <main>
-      <Outlet />
+      <Router>
+        <Suspense fallback={<p>loading</p>}>
+          <AppRouter />
+        </Suspense>
+      </Router>
     </main>
   )
 }

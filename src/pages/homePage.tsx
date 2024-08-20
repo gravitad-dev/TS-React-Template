@@ -1,8 +1,8 @@
 export const HomePage = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">TS React Template</h1>
-    </>
+    <section className="min-h-screen">
+      <h1>Home</h1>
+    </section>
   )
 }
 
