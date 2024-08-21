@@ -15,7 +15,6 @@ const CustomToast = <T,>({ data, error, msgSuccess, msgError }: Props<T>) => {
     } else if (error) {
       toast.error(msgError)
     }
-    toast.error(msgError)
   }, [data, error, msgSuccess, msgError])
   return <Toaster position="bottom-center" />
 }

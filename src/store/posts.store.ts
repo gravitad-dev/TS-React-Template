@@ -25,9 +25,10 @@ const postsStore: StateCreator<PostsState> = (set) => ({
     set({ loading: true })
     await fetchPosts()
       .then((res) => set({ posts: res.data, loading: false, error: null }))
-      .catch((error) =>
+      .catch((error) => {
         set({ posts: [], error: error.message, loading: false })
-      )
+        console.log('error', error)
+      })
   },
 })
 
