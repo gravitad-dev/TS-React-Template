@@ -1,35 +1,35 @@
-import CustomToast from '@/components/common/CustomToast';
-import { usePostsStore } from '@/store';
-import { useEffect } from 'react';
+import CustomToast from '@/components/common/CustomToast'
+import { usePostsStore } from '@/store'
+import { useEffect } from 'react'
 
 export const HomePage = () => {
-  const loading = usePostsStore((state) => state.loading);
-  const error = usePostsStore((state) => state.error);
-  const posts = usePostsStore((state) => state.posts);
-  const getPosts = usePostsStore((state) => state.getPosts);
+  const loading = usePostsStore((state) => state.loading)
+  const error = usePostsStore((state) => state.error)
+  const posts = usePostsStore((state) => state.posts)
+  const getPosts = usePostsStore((state) => state.getPosts)
 
   useEffect(() => {
-    getPosts();
-  }, [getPosts]);
+    getPosts()
+  }, [getPosts])
 
   if (loading) {
     return (
       <p>
         <strong>Loading...</strong>
       </p>
-    );
+    )
   }
 
   return (
-    <section className='min-h-screen'>
+    <section className="min-h-screen">
       <CustomToast
         data={posts}
         error={error}
-        msgSuccess='Posts fetched successfully'
-        msgError='Error while fetching posts'
+        msgSuccess="Posts fetched successfully"
+        msgError="Error while fetching posts"
       />
       {error ? (
-        <p className='text-red-500'>{error}</p>
+        <p className="text-red-500">{error}</p>
       ) : (
         posts?.length > 0 && (
           <ul>
@@ -50,7 +50,7 @@ export const HomePage = () => {
       )}
       <h1>Home</h1>
     </section>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
