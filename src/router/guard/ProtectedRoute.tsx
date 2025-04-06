@@ -1,4 +1,4 @@
-import { useAuthStore } from '@/store/auth/auth.store'
+import { useAuthStore } from '@/lib'
 import { Navigate, useLocation } from 'react-router-dom'
 
 export function ProtectedRoute({ children }: React.PropsWithChildren) {
