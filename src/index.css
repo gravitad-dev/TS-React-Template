@@ -1,18 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@theme {
+  --color-customWhite: #f5f5f5;
 }
 
-html,
-body {
-  background-color: #fff;
-  min-height: 100vh;
-  color: #000;
+html {
+  scroll-behavior: smooth;
+}
+
+.navHeight {
+  @apply h-[80px];
+}
+
+.maxWidth {
+  @apply max-w-[1535px] mx-auto;
+}
+
+.subtitle {
+  @apply text-[35px] text-center font-semibold mb-10;
 }
