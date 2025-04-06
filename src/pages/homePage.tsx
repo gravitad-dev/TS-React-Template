@@ -1,4 +1,4 @@
-import { Layout } from "@/components/common";
+import { Layout } from '@/components/common'
 
 export const HomePage = () => {
   return (
@@ -7,7 +7,7 @@ export const HomePage = () => {
         <h1>Home</h1>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

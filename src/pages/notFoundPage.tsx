@@ -16,5 +16,5 @@ export const NotFoundPage = () => {
         </a>
       </div>
     </body>
-  );
-};
+  )
+}
