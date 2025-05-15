@@ -1,12 +1,12 @@
-import { Footer } from '@/components/common/'
-import Navbar from '@/components/common/Navbar'
-import type { Routes } from '@/types'
-import type { RouteObject } from 'react-router-dom'
-import { useRoutes } from 'react-router-dom'
-import { fallbackRoutes } from './fallback'
-import { ProtectedRoute } from './guard/ProtectedRoute'
-import { privateRoutes } from './private'
-import { publicRoutes } from './public'
+import type { Routes } from "@/types";
+import type { RouteObject } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
+import { fallbackRoutes } from "./fallback";
+import { privateRoutes } from "./private";
+import { publicRoutes } from "./public";
+import { Footer, Navbar } from "@/components/common";
+import { PublicRoute } from "./guard/publicRoute";
+import { ProtectedRoute } from "./guard/protectedRoute";
 
 export const AppRouter = () => {
   /** 
@@ -15,7 +15,7 @@ export const AppRouter = () => {
   **/
   const generateRouteConfig = (
     routes: Routes[],
-    isPrivate = false
+    isPrivate = false,
   ): RouteObject[] => {
     return routes.map((route) => {
       // protected routes
@@ -24,36 +24,39 @@ export const AppRouter = () => {
         element: isPrivate ? (
           <ProtectedRoute>{route.element}</ProtectedRoute>
         ) : (
-          route.element
+          <PublicRoute>{route.element}</PublicRoute>
         ),
-      }
+      };
 
       // Recursively handle & generate children routes
       if (route.children) {
-        routeObject.children = generateRouteConfig(route.children)
+        routeObject.children = generateRouteConfig(route.children, isPrivate);
       }
 
-      return routeObject
-    })
-  }
+      return routeObject;
+    });
+  };
 
-  const publicRouteObjects = generateRouteConfig(publicRoutes)
-  const privateRouteObjects = generateRouteConfig(privateRoutes, true)
-  const fallbackRouteObjects = generateRouteConfig(fallbackRoutes)
+  const publicRouteObjects = generateRouteConfig(publicRoutes);
+  const privateRouteObjects = generateRouteConfig(privateRoutes, true);
+  const fallbackRouteObjects = generateRouteConfig(fallbackRoutes);
 
   const routes = [
     ...publicRouteObjects,
     ...privateRouteObjects,
     ...fallbackRouteObjects,
-  ]
+  ];
 
-  const allRoutes = useRoutes(routes)
-
+  const allRoutes = useRoutes(routes);
+  const hiddenNavAndFooterRoutes: string[] = ["/login", "/register", "/verify"];
+  const shouldShowNavAndFooter = !hiddenNavAndFooterRoutes.includes(
+    location.pathname,
+  );
   return (
     <>
-      <Navbar />
+      {shouldShowNavAndFooter && <Navbar />}
       {allRoutes}
-      <Footer />
+      {shouldShowNavAndFooter && <Footer />}
     </>
-  )
-}
+  );
+};
