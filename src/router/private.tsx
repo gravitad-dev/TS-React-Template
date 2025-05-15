@@ -1,6 +1,6 @@
 export const privateRoutes = [
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: (
       <div className="max-w-[1440px] h-100">
         <h1 className="text-2xl">Dashboard</h1>
@@ -8,7 +8,7 @@ export const privateRoutes = [
     ),
     children: [
       {
-        path: 'overview',
+        path: "overview",
         element: (
           <div className="">
             <h1 className="text-3xl text-black">Overview</h1>
@@ -17,4 +17,4 @@ export const privateRoutes = [
       },
     ],
   },
-]
+];

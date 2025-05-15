@@ -1,26 +1,24 @@
-import type { User } from '@/interfaces/user.interface'
-// import type { AuthStatus, User } from '@/contracts'
-import type { AuthStatus } from '@/types/auth-status.type'
-import { create } from 'zustand'
-import type { StateCreator } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import type { User } from "@/interfaces/user.interface";
+import { create } from "zustand";
+import type { StateCreator } from "zustand";
+import { devtools, persist } from "zustand/middleware";
 
 export interface AuthState {
-  status: AuthStatus
-  token?: string
-  user?: User
-  isLoggedIn: boolean
-  setAuthState: (authState: Partial<AuthState>) => void
+  user: User | null;
+  setUser: (user: User) => void;
+  clearUser: () => void;
 }
 
 const storeApi: StateCreator<AuthState> = (set) => ({
-  status: 'unauthorized',
-  token: undefined,
-  user: undefined,
-  isLoggedIn: false,
-  setAuthState: (authState) => set((state) => ({ ...state, ...authState })),
-})
+  user: null,
+  setUser: (user) => set({ user }),
+  clearUser: () => set({ user: null }),
+});
 
 export const useAuthStore = create<AuthState>()(
-  devtools(persist(storeApi, { name: 'auth-storage' }))
-)
+  devtools(
+    persist(storeApi, {
+      name: "auth-storage",
+    }),
+  ),
+);
